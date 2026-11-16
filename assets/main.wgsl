@@ -229,9 +229,9 @@ fn main_image(@builtin(global_invocation_id) id: vec3u) {
 
         var tex: vec3f;
         if (getBlock(h.cell) == 2u) {
-            tex = textureSampleLevel(channel1, bilinear, tuv, 0.0).rgb;
+            tex = textureSampleLevel(channel1, nearest, tuv, 0.0).rgb;
         } else {
-            tex = textureSampleLevel(channel0, bilinear, tuv, 0.0).rgb;
+            tex = textureSampleLevel(channel0, nearest, tuv, 0.0).rgb;
         }
 
         var shade = 0.80;
